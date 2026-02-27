@@ -47,9 +47,10 @@ export async function POST(req: NextRequest) {
     const imageBuffer = Buffer.from(base64Data, "base64");
     const imageBlob = new Blob([imageBuffer], { type: "image/png" });
 
-    // Call HuggingFace FLUX.1-Kontext-dev img2img
+    // Call HuggingFace FLUX.1-Kontext-dev img2img via Replicate provider
     const result = await hf.imageToImage({
       model: "black-forest-labs/FLUX.1-Kontext-dev",
+      provider: "replicate",
       inputs: imageBlob,
       parameters: {
         prompt,
