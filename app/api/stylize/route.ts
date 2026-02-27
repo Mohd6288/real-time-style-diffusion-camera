@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { HfInference } from "@huggingface/inference";
+import { InferenceClient } from "@huggingface/inference";
 import { AI_STYLE_PRESETS } from "@/lib/ai-styles";
 
-const hf = new HfInference(process.env.HF_TOKEN);
+const hf = new InferenceClient(process.env.HF_TOKEN!);
 
 export async function POST(req: NextRequest) {
   try {
@@ -47,13 +47,12 @@ export async function POST(req: NextRequest) {
     const imageBuffer = Buffer.from(base64Data, "base64");
     const imageBlob = new Blob([imageBuffer], { type: "image/png" });
 
-    // Call HuggingFace img2img
+    // Call HuggingFace FLUX.1-Kontext-dev img2img
     const result = await hf.imageToImage({
-      model: "runwayml/stable-diffusion-v1-5",
+      model: "black-forest-labs/FLUX.1-Kontext-dev",
       inputs: imageBlob,
       parameters: {
         prompt,
-        strength: preset.strength,
         guidance_scale: preset.guidanceScale,
         num_inference_steps: preset.steps,
       },
