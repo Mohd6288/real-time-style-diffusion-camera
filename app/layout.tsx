@@ -3,8 +3,8 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Style Diffusion Camera",
-  description: "Real-time artistic style transfer — transform your camera feed into vintage film, comic book, anime, and more.",
+  title: "AI Style Diffusion Camera",
+  description: "AI-powered style transfer — transform your photos into vintage film, comic book, anime, and more using Stable Diffusion.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 &#127912;
               </span>
               <span className="font-bold text-sm text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors hidden sm:block">
-                Style Diffusion Camera
+                AI Style Diffusion Camera
               </span>
             </Link>
             <div className="flex items-center gap-1">
@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 Home
               </Link>
               <Link href="/studio" className="px-4 py-2 rounded-lg text-sm font-semibold bg-[var(--accent)] text-white hover:bg-[var(--accent2)] transition-all">
-                Open Studio
+                AI Studio
               </Link>
             </div>
           </nav>
@@ -37,8 +37,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <footer className="border-t border-[var(--border)]">
           <div className="max-w-6xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <span className="text-xs text-[var(--muted)]">Style Diffusion Camera &copy; {new Date().getFullYear()}</span>
-            <span className="text-xs text-[var(--muted)]">Built with Next.js &middot; Runs entirely in your browser</span>
+            <span className="text-xs text-[var(--muted)]">AI Style Diffusion Camera &copy; {new Date().getFullYear()}</span>
+            <span className="text-xs text-[var(--muted)]">Built with Next.js &middot; Powered by Stable Diffusion</span>
           </div>
         </footer>
       </body>

@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@huggingface/inference": "^4.13.13",
     "next": "latest",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
